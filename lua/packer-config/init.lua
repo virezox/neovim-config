@@ -7,22 +7,17 @@ return require('packer').startup(function(use)
   use('rcarriga/nvim-notify')
   use('nvim-lualine/lualine.nvim')
   use('romgrk/barbar.nvim')
-  use({
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } },
-  })
+  use('nvim-lua/plenary.nvim')
+  use('nvim-telescope/telescope.nvim')
+  use('windwp/nvim-autopairs')
+  use('akinsho/toggleterm.nvim')
+  use('mfussenegger/nvim-dap')
 
   --> colorschemes
   use('EdenEast/nightfox.nvim')
 
   --> treesitter & treesitter modules/plugins
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      require('nvim-treesitter.install').update({ with_sync = true })
-    end,
-  })
+  use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }) --> treesitter
   use('nvim-treesitter/nvim-treesitter-refactor')
 
   --> lsp

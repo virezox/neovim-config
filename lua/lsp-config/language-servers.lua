@@ -95,6 +95,11 @@ require('lspconfig')['rust_analyzer'].setup({
   },
 })
 
+require('lspconfig')['taplo'].setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+})
+
 require('lspconfig')['tsserver'].setup({
   on_attach = on_attach,
   flags = lsp_flags,

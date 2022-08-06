@@ -21,6 +21,6 @@ set.relativenumber = true
 set.cursorline = true
 
 set.hidden = true
-set.mouse = a
+set.mouse = 'a'
 
 vim.notify = require('notify')

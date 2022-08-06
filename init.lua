@@ -5,6 +5,8 @@ require('packer-config')
 require('nvim-tree-config')
 require('treesitter-config')
 require('lualine-config')
+require('autopairs-config')
+require('toggleterm-config')
 
 --> lsp
 require('lsp-config.language-servers')
