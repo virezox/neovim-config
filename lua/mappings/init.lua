@@ -7,7 +7,6 @@ local opts = { noremap = true, silent = true }
 map('n', '<Space>t', ':NvimTreeToggle<CR>', opts)
 map('n', '<Space>gt', ':NvimTreeFocus<CR>', opts)
 
-
 -- barbar mappings
 -- Move to previous/next
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
@@ -50,10 +49,6 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
 
-
 -- telescope mappings
 map('n', '<Space>ff', ':Telescope find_files<CR>', opts)
 map('n', '<Space>fg', ':Telescope live_grep<CR>', opts)
-
-
-

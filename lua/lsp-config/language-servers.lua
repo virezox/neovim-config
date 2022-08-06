@@ -1,6 +1,6 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -14,7 +14,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -37,66 +37,65 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
 
-require('lspconfig')['cmake'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
+require('lspconfig')['cmake'].setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+})
 
-require('lspconfig')['cssls'].setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-}
+require('lspconfig')['cssls'].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags,
+})
 
-require('lspconfig')['html'].setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-}
+require('lspconfig')['html'].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags,
+})
 
-require('lspconfig')['jsonls'].setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-}
+require('lspconfig')['jsonls'].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags,
+})
 
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-}
+require('lspconfig')['pyright'].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags,
+})
 
-require('lspconfig')['rust_analyzer'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    -- Server-specific settings...
-    settings = {
-      ["rust-analyzer"] = {
-        imports = {
-          granularity = {
-            group = "module",
-          },
-          prefix = "self",
+require('lspconfig')['rust_analyzer'].setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  -- Server-specific settings...
+  settings = {
+    ['rust-analyzer'] = {
+      imports = {
+        granularity = {
+          group = 'module',
         },
-        cargo = {
-          buildScripts = {
-            enable = true,
-          },
+        prefix = 'self',
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
         },
-        procMacro = {
-          enable = true
-        },
-      }
-    }
-}
+      },
+      procMacro = {
+        enable = true,
+      },
+    },
+  },
+})
 
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
+require('lspconfig')['tsserver'].setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+})
