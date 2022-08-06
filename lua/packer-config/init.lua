@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
   use('windwp/nvim-autopairs')
   use('akinsho/toggleterm.nvim')
   use('mfussenegger/nvim-dap')
+  use('simrat39/rust-tools.nvim')
 
   --> colorschemes
   use('EdenEast/nightfox.nvim')
